@@ -1,0 +1,60 @@
+<h1>Projeto</h1>
+
+<ul class="tree">
+    <li>
+        <span wm-folder>backend</span> 
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuário.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rota.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>frontend</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    
+    // Pega todas tags com atributo wm-folder.
+    // Varre cada elemento que há la dentro, botando paramêtro folder.
+    // Atribuo a função click onde há cada folder, que é onde há o wm-folder.
+    // Digo que ul é o que há dentro de folder, nextElementSibling verifica o que há dentro.
+    // digo que d vai ser o estilo do display da UL.
+    // Crio a condição se o display é exatamente none, caso contrário fica visível, senão, escondido.
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function(e) {
+            const ul = folder.nextElementSibling 
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+        
+    })
+
+    
+</script>
